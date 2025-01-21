@@ -1,25 +1,39 @@
 <div class="dashboard-container p-p-3">
-  <h2 class="title">TAT Report</h2>
-  <p class="subtitle">Last Updated On 1st January 2025</p>
+  <div class="header-top">
+    <div class="header-title">
+      <h2 class="title">TAT Report</h2>
+      <p class="subtitle">Last Updated On 1st January 2025</p>
+    </div>
 
-  <div class="control-panel p-d-flex p-jc-between p-ai-center p-mb-3">
-    <p-dropdown
-      [options]="labels"
-      [(ngModel)]="selectedLabel"
-      placeholder="Upload TAT"
-      (onChange)="updateData()"
-      class="dropdown-custom"
-    ></p-dropdown>
-    <button pButton type="button" label="Export" class="export-btn"></button>
+    <!-- <div class="control-panel p-d-flex p-jc-between p-ai-center p-mb-3">
+      <p-dropdown
+        [options]="labels"
+        [(ngModel)]="selectedLabel"
+        placeholder="Upload TAT"
+        (onChange)="updateData()"
+        class="dropdown-custom"
+      ></p-dropdown>
+      <button pButton type="button" label="Export" class="export-btn"></button>
+    </div> -->
+
+    <div class="control-panel p-d-flex p-jc-between p-ai-center p-mb-3">
+      <!-- Replacing p-dropdown with a standard HTML select -->
+      <select
+        [(ngModel)]="selectedLabel"
+        (change)="updateData()"
+        class="dropdown-custom"
+      >
+        <option *ngFor="let label of labels" [value]="label.value">
+          {{ label.label }}
+        </option>
+      </select>
+      <button pButton type="button" label="Export" class="export-btn"></button>
+    </div>
   </div>
 
   <div class="content-wrapper p-d-flex p-jc-between p-mb-4">
     <div class="chart-container">
-      <p-chart
-        type="doughnut"
-        [data]="chartData"
-        (onHover)="onSegmentHover($event)"
-      ></p-chart>
+      <p-chart type="doughnut" [data]="chartData"></p-chart>
     </div>
     <div class="table-container">
       <p-table [value]="tableData" class="custom-table">

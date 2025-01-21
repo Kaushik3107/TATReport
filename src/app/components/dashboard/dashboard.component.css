@@ -1,20 +1,12 @@
-/* .indicator-circle {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  
-  .p-datatable {
-    width: 100%;
-  }
-   */
-
    .dashboard-container {
     font-family: Arial, sans-serif;
     color: #333;
   }
-  
+  .header-top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
   .title {
     font-size: 24px;
     font-weight: bold;
@@ -32,14 +24,34 @@
   }
   
   .dropdown-custom {
+    border: 1px solid #ddd;
+    width: 200px;
+    padding: 8px 10px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+   
+  }
+  
+  .dropdown-custom:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  
+  .dropdown-custom {
+    border: 1px solid #ddd;
     width: 200px;
   }
   
   .export-btn {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
+    background-color: #ffffff;
+    color: #696868;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     padding: 8px 15px;
+    margin:20px;
     font-size: 14px;
   }
   

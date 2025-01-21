@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   labels = [
     { label: 'Segment - Digital', value: 'digital' },
     { label: 'Segment - Manual', value: 'manual' },
@@ -27,13 +27,14 @@ export class DashboardComponent {
       datasets: [
         {
           data: data.map((item) => item.invoiceAmount.replace(/[^0-9]/g, '')),
-          // backgroundColor: ['#4caf50', '#ffeb3b', '#ff9800', '#f44336'],
           backgroundColor: ['green', 'yellow', 'orange', 'pink', 'red', 'blue'],
         },
       ],
     };
 
     this.tableData = data;
+
+    // Total Invoice Amount
     this.grandTotal = data
       .map((item) => parseInt(item.invoiceAmount.replace(/[^0-9]/g, '')))
       .reduce((a, b) => a + b, 0)
@@ -42,13 +43,14 @@ export class DashboardComponent {
         currency: 'INR',
       });
 
+    // Total Invoices
     this.invoiceTotal = data
       .map((item) => item.noOfInvoices)
       .reduce((a, b) => a + b, 0)
       .toString();
-    console.log(this.invoiceTotal);
   }
 
+  // Based on Label Mock data
   digitalData = [
     {
       ageing: '0-7 Days',
@@ -95,19 +97,18 @@ export class DashboardComponent {
   ];
 
   manualData = [
-    // Add similar data structure for manual segment
     {
-      ageing: '0-5 Days',
-      noOfInvoices: 22,
+      ageing: '0-7 Days',
+      noOfInvoices: 12,
       invoiceAmount: '₹80,000',
-      mix: '56.41%',
+      mix: '45.41%',
       indicator: 'green',
     },
     {
       ageing: '8-15 Days',
-      noOfInvoices: 8,
+      noOfInvoices: 20,
       invoiceAmount: '₹65,000',
-      mix: '20.51%',
+      mix: '32.51%',
       indicator: 'yellow',
     },
     {
@@ -119,30 +120,26 @@ export class DashboardComponent {
     },
     {
       ageing: '21-30 Days',
-      noOfInvoices: 2,
+      noOfInvoices: 8,
       invoiceAmount: '₹75,000',
-      mix: '5.13%',
+      mix: '25.13%',
       indicator: 'pink',
     },
     {
       ageing: '31-45 Days',
-      noOfInvoices: 2,
+      noOfInvoices: 4,
       invoiceAmount: '₹30,000',
-      mix: '5.13%',
+      mix: '15.13%',
       indicator: 'red',
     },
     {
       ageing: '>45 Days',
       noOfInvoices: 3,
       invoiceAmount: '₹54,973',
-      mix: '7.69%',
+      mix: '17.69%',
       indicator: 'blue',
     },
   ];
-
-  onSegmentHover(event: any) {
-    // Show data related to hovered segment
-  }
 
   ngOnInit() {
     this.updateData();
