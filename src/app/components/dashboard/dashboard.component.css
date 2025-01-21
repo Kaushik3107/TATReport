@@ -1,0 +1,94 @@
+/* .indicator-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .p-datatable {
+    width: 100%;
+  }
+   */
+
+   .dashboard-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #777;
+  }
+  
+  .control-panel {
+    margin-bottom: 20px;
+  }
+  
+  .dropdown-custom {
+    width: 200px;
+  }
+  
+  .export-btn {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .chart-container {
+    width: 36%;
+  }
+  
+  .table-container {
+    width: 50%;
+  }
+  
+  .custom-table {
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  .custom-table th {
+    background-color: #f5f5f5;
+    text-align: left;
+    padding: 20px;
+  }
+  
+  .custom-table td {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .indicator-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .grand-total {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 20px;
+  }
+  .invoicetotal{
+    margin-left: 38px;
+  }
+  .grandtotal{
+    margin-left: 145px;
+  }
